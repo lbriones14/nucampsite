@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+    <!--HEADER -->
     <header class="jumbotron jumbotron-fluid">
 
 
@@ -35,6 +35,7 @@
                     <h1>NuCamp</h1>
                     <h2>a better way to camp</h2>
                 </div>
+                <!--RESERVE BUTTON -->
                 <div class="col-md-4 col-xl-2">
                     <a class="btn btn-info btn-lg ml-0 mt-4" data-toggle="modal" data-target="#reserveModal"
                         role="button">Reserve Campsite </a>
@@ -43,6 +44,7 @@
             </div>
         </div>
     </header>
+    <!--MODAL RESERVE FORM -->
     <div class="modal" id="reserveModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content ">
@@ -52,6 +54,7 @@
                         <span aria-hidden="true">&times;</span></button>
                     </button>
                 </div>
+                <!--MODAL BODY -->
                 <div class="modal-body">
                     <form id="reserveForm">
                         <div class="form-group row">
@@ -75,6 +78,7 @@
                                 <input type="date" name="date" id="date" value-="placeholder" class="form-control">
                             </div>
                         </div>
+                        <!--SITE & RV BUTTONS -->
                         <div class="form-group row">
                             <label for="campsiteType" class="col-form-label col-sm">Campsite Type</label>
                             <div class="col btn-group btn-group-toggle" data-toggle="buttons">
@@ -87,6 +91,7 @@
 
                             </div>
                         </div>
+                        <!--SEARCH AND CANCEL BUTTON -->
                         <div class="form-group-row">
                             <div class="col">
                                 <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
@@ -99,7 +104,7 @@
             </div>
         </div>
     </div>
-
+<!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#"> <img src="img/logo.png" height="30" width="30"></a>
@@ -123,6 +128,7 @@
             </div>
         </div>
     </nav>
+    <!-- LOG IN MODAL -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -133,6 +139,7 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <form>
+                            <!--EMAIL & PASSWORD FOR MODAL -->
                             <div class="form-row">
                                 <div class="form-group col-12">
                                     <label class="sr-only" for="loginEmail">Email address</label>
@@ -152,6 +159,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!--SIGN IN BUTTON -->
                             <div class="form-row">
                                 <button type="button" class="btn btn-secondary btn-sm ml-auto"
                                     data-dismiss="modal">Cancel</button>
@@ -163,7 +171,7 @@
             </div>
         </div>
     </div>
-
+<!-- CAROUSEL -->
     <div class="container">
 
         <div class="row row-content">
@@ -215,7 +223,15 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only">Next</span>
                     </a>
-
+                    <!--PLAY & PAUSE BUTTONS FOR CAROUSEL -->
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carouselPause">
+                            <i class="fa fa-pause"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carouselPlay">
+                            <i class="fa fa-play"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -285,7 +301,7 @@
     </div>
 
 
-
+<!-- FOOTER-->
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -324,6 +340,17 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <script>
+    $(function() {
+        $(".carousel").carousel( {interval: 2000 });
+        $("#carouselPause").click(function(){
+            $(".carousel").carousel("pause");
+        });
+        $("#carouselPlay").click(function(){
+            $(".carousel").carousel("cycle");
+        });
+    });
+    </script>
 
 </body>
 
